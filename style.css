@@ -1,0 +1,87 @@
+* {
+    border: none;
+    border-radius: 0px;
+    padding: 3.5px;
+    font-family: Jetbrains Mono, FontAwesome;
+    font-size: 17px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#pl {
+    background-color: #dbcc54;
+    border-radius: 18px;
+}
+
+#cs {
+    background-color: #dbcc54;
+    border-radius: 18px;
+}
+
+#pulseaudio {
+    background-color: #dbcc54;
+    border-radius: 18px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#bluetooth {
+    background-color: #dbcc54;
+    border-radius: 18px;
+}
+
+#workspaces {
+    background-color: #dbcc54;
+    border-radius: 18px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: 2px;
+    color: white;
+}
+
+#workspaces button.focused {
+    background: #dbcc54;
+    border-bottom: 3px solid white;
+}
+
+#mode, #clock, #battery {
+    padding: 0 10px;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#battery {
+    background-color: #ffffff;
+    color: black;
+}
+
+#battery.charging {
+    color: white;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

@@ -1,0 +1,60 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "hyprland/mode"],
+    "modules-center": ["group/cs"],
+    "modules-right": ["group/pl"],
+    
+    "custom/spotify" : {
+        "format": "",
+        "on-click": "playerctl --player=spotify play-pause",
+        "on-click-right": "playerctl --player=spotify stop",
+        "on-scroll-up": "playerctl --player=spotify next",
+        "on-scroll-down": "playerctl --player=spotify previous"
+    },
+
+    "hyprland/workspaces" : {
+        "persistent-workspaces": {
+            "*": 5,
+    },
+        "disable-scroll": true,
+        "all-outputs": false,
+        "active-only": false,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
+    
+    "custom/logout": {
+        "format": "",
+        "on-click": "wlogout"
+    },
+    
+
+    "pulseaudio": {
+        "format": " {volume}",
+        "format-muted": "",
+        "on-click": "pavucontrol -t 3"
+    },
+
+    "group/pl": {
+        "orientation": "horizontal",
+        "modules" : ["pulseaudio", "custom/logout"]
+    },
+
+    "custom/amelie" : {
+        "format": "",
+        "on-click": "imv ~/Downloads/amelie.jpeg"
+    },
+
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+
+    "group/cs" : {
+        "orientation": "horizontal",
+        "modules": ["custom/spotify", "clock", "custom/amelie"]
+    }
+}
